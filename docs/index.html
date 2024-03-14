@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Encriptador de Texto</title>
+        <link rel="stylesheet" href="reset.css">
+        <link rel="stylesheet" href="Style.css"> 
+        <link rel="icon" type="image/svg+xml" href="img/security.ico" /> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <header class="principal">
+            <div class="encabezado">
+                <img class="Logo" src="./img/Logo.svg" alt="Logo encriptación">
+                <h1 class="título-encabezado">Encriptador de Texto</h1>
+            </div>
+        </header>
+        <main>
+            <div class="main">
+                <div class="datos">
+                    <textarea id="texto-encriptado" class="campo-texto" placeholder="Ingrese el texto aquí"></textarea>
+                    <span id="error-mj" class="error-mensaje">Debes ingresar un texto.</span>
+                    <div class="complementos-datos">
+                        <img src="./img/icono-atención.png" alt="signo exclamación">
+                        <span class="info-datos">Solo letras minúsculas, sin acentos ni caracteres especiales; el sistema no los considerará.</span>                           
+                        <div class="btn-datos">
+                            <button id="bottonEncrip" class="btn btnEncriptar">Encriptar</button>
+                            <button id="bottonDesencrip" class="btn btnDesencriptar">Desencriptar</button>
+                        </div>
+                    </div>    
+                </div>
+                <div id="campo-mensaje" class="mensaje">
+                    <img id="imagen-robot" class="robot" src="./img/robot.png" alt="Ilustración">
+                    <div id="texto-info" class="texto-informativo">Ningún mensaje fue encontrado</div>
+                    <textarea id="instruc-usuario" class="instrucciones-usuario" placeholder="Ingresa el texto que deseas desencriptar o encriptar."></textarea>
+                    <button id="bottonCopy" class=" btn btnCopiar oculto">Copiar</button>
+                </div>                
+            </div>            
+        </main>
+        <footer class="piepagina">
+            <p class="texto-footer texto">Created by Cristina González</p>
+            <p class="texto-footer fecha">2024</p>
+            <a href="https://github.com/CrizJgp">
+                <img src="img/icons8-github-48.svg" alt="GitHUb">
+            </a>
+            <a href="https://www.linkedin.com/in/cristina-ge/">
+                <img src="img/icons8-linkedin-48.svg" alt="LinkedIn">
+            </a>
+        </footer>
+        <script src="script.js"></script> 
+    </body>
+</html>

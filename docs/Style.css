@@ -1,0 +1,282 @@
+:root {
+    --color-blue: rgba(10, 56, 113, 1);
+    --color-white: rgba(216, 223, 232, 1);
+    --color-grisfuerte: rgba(52, 58, 64, 1);
+    --color-grisbajo:  rgba(73, 80, 64, 1);
+    --color-azulmarino: #0A2540;
+    --color-blanco: #ffffff;
+    --background: linear-gradient(to right, #7fc5e0, #38bdb6, #24b3ab);
+    --traslucido-blanco: rgba(255, 255, 255, 0.6);
+    --traslucido-negro: rgba(27, 28, 29, 0.75);
+    --color-negro: black;
+    --color-verdeamarillo: greenyellow;
+    --color-verdelima: rgb(166, 255, 0);
+    --color-amarillo: rgb(231, 228, 46);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-image: url('img/alien-optimize.gif');
+    background-repeat: no-repeat;
+    background-size:cover;
+    font-size: 16px;
+}
+
+.encabezado {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+}
+
+.Logo {
+    margin-top: 40px;
+}
+
+.título-encabezado{
+    font-weight: 400;
+    font-style: normal;
+    font-size: 50px;
+    color: var(--color-blanco);
+    margin-top: 40px;
+}
+
+.main {
+    width: 80.5%;
+    margin: auto 40px auto auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    min-height: 80vh;
+    align-items: end;
+    flex: 1 0 auto;
+}  
+/*datos corresponde a los elementos mostrados al lado izquierdo*/
+.datos {
+    height: 85%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+/* campo texto es donde el usuario ingresará le información */
+.campo-texto {
+    width: 80%; 
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 48px;
+    color: var(--color-blue);
+    resize: none;
+    background: none;
+    border: none;    
+    outline: none;
+}
+
+.campo-texto::placeholder {
+    color: var(--color-blue);
+}
+.error-mensaje {
+    display: none; 
+    color:var(--color-blanco); /* Cambia esto al color que prefieras para el texto */
+    padding: 10px;
+    border-radius: 5px;
+    font-size:  20px;
+    margin: 10px 0;
+    text-transform: uppercase;
+}
+/* info-datos correspondiente a la etiqueta span que muestra el texto informativo arriba de los botones*/
+.info-datos {
+    font-size: 12px;
+    color: var(--color-blanco);
+}
+/* btn-datos solo inclye los botones para encriptar y desencriptar */
+.btn-datos{
+    display: flex;
+    gap: 24px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+}
+/* bnt inycluye todos los botones copiar, ecriptar y desencriptar */
+.btn{
+    border: 1px solid var(--color-verdelima);
+    max-width: 328px;
+    min-width: 160px;
+    width: 40%;
+    height: 67px;
+    border-radius: 24px;
+    font-size: 18px;
+    cursor: pointer;   
+}
+
+.btnEncriptar {
+    color: var(--color-blue);
+    background-color: var(--color-verdeamarillo);
+    border: none;
+}
+
+.btnDesencriptar {
+    color: var(--color-blue);
+    background-color: var(--color-amarillo);
+}
+/*mensaje corresponde a los elementos mostrados en la parte derecha*/
+.mensaje {
+    background: var(--traslucido-blanco);
+    height: calc(100% + 48px);
+    border-radius: 32px;
+    padding: 32px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    align-items: center;
+    box-shadow: 0px 24px 32px -8px rgba(0,0,0,0.08);
+}
+/* la clase mensaje con ajustar ayuda a comodar los elementos que estan dentro de mensaje */
+.mensaje.ajustar {
+    justify-content: space-between;
+}
+
+.robot {
+    max-width: 100%;
+    height: 30vh;
+    object-fit: contain;
+    align-items: center;
+    margin: 1.5em 0;
+    display: block;
+}
+
+.texto-informativo, .instrucciones-usuario{
+    overflow-y: auto;
+}
+/* corresponde al text area que mostrará ningún mensaje o el mensaje encriptado o desencriptado */
+.texto-informativo {
+    background:none;
+    border: none;
+    outline: none;
+    resize:none;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    color: var(--color-grisfuerte);
+    flex: 1;    
+}
+
+/* esta clase ayuda a comodar el elemento de texto informativo */
+.texto-informativo.ajustar {
+    text-align: left;
+    font-weight: lighter;
+    height: 80%;
+}
+/* instrucciones-usuario corresponde a la etiqueta text area usada para mostrar información al usuario */
+.instrucciones-usuario {
+    background:none;
+    border: none;
+    outline: none;
+    resize:none;
+    font-weight:200;
+    font-size: 16px;
+    text-align: center;
+    color: var(--color-grisbajo);
+    flex: 2;
+}
+
+.instrucciones-usuario::placeholder {
+    color: var(--color-grisbajo);
+}
+/* la propiedad display none se coloca en el botón copiar para ocultarlo */
+.btnCopiar {
+    width: 100%;
+    background: transparent;
+    color: var(--color-blue);
+    display: none;
+    border: 2px solid var(--color-verdelima);
+}
+
+.piepagina {
+    padding: 2vw 0;
+    font-size: 4vw;
+    color: var(--color-blanco);
+    text-align: center;
+    font-family: "Lato", sans-serif;
+    width: 100%;
+    margin-top: 15px;
+}
+
+.texto-footer {
+    font-size: 14px;
+    padding: 5px;
+}
+
+@media screen and (max-width: 800px) {
+    .robot {
+        display: none; /* Oculta la imagen del robot en pantallas pequeñas */
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .piepagina {
+        flex-direction: row; /* Esto hará que tus elementos <p> se muestren en una línea */
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .main {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        width: auto;
+        margin: auto 40px;
+    }
+    .btn {
+        justify-content: center;
+    }
+    .btnEncriptar, .btnDesencriptar {
+        width: 45%;
+        margin-bottom: 20px;
+    }
+    .mensaje {
+        height: auto; 
+    }
+    .texto-informativo, .instrucciones-usuario {
+        font-size: calc(1em + 1vw); /* Ajusta el tamaño del texto de acuerdo con el tamaño de la pantalla */
+    }
+    .piepagina {
+        flex-direction: column; /* Esto hará que los elementos <p> se apilen verticalmente */
+    }
+    .texto {
+        margin-bottom: 10px; /* Agregará un poco de espacio entre los elementos <p> */
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .main {
+        margin: auto 16px;
+    }
+    .btnEncriptar, .btnDesencriptar {
+        max-width: 100%;
+        width: 100%;
+    }
+    .robot.oculto {
+        display: none; /* Oculta la imagen del robot en pantallas pequeñas */
+    }
+    .mensaje {
+        height: auto; 
+    }
+    .texto-informativo, .instrucciones-usuario {
+        font-size: calc(1em + 2vw); /* Ajusta el tamaño del texto de acuerdo con el tamaño de la pantalla */
+    }
+    .piepagina {
+        padding: 4vw 0;
+        font-size: 5vw;
+    }
+    .texto-footer {
+        font-size: 4vw;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .piepagina {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
