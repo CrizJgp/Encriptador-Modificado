@@ -119,6 +119,7 @@ function copiarTexto() {
     textoResultado.innerText = "Ningún mensaje fue encontrado";
     textContainer.style.display = 'block';
     btnCopiar.style.display = 'none';
+    limpiarPantalla();
   }, 1000); 
 }
 
@@ -134,11 +135,12 @@ function desencriptar(e) {
     textoResultado.innerText = desencriptarTexto(textoDesencriptar);
     cajatexto.value = '';
     robotContainer.classList.add("oculto");
-    textContainer.style.display = 'none';
     btnCopiar.style.display = 'block';
+    textContainer.style.display = 'none';
   } 
 }
 
 function limpiarPantalla() {
   textoResultado.innerText = "Ningún mensaje fue encontrado";
+  robotContainer.classList.remove("oculto");
 }
